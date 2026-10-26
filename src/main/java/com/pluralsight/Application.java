@@ -3,18 +3,20 @@ package com.pluralsight;
 public class Application {
     public static void main(String[] args) {
 
-        int[] testScores = {80, 99, 45, 56, 100, 81, 77, 52, 92, 38};
+        int[] testScores = {80, 99, 45, 56, 100, 81, 77, 52, 92, 50};
 
-        int sum = 0;
+        double sum = 0;
         int highScore = testScores[0];
-        int lowScore = 0;
+        int lowScore = testScores[0];
 
         for(int testScore : testScores){
             sum += testScore;
         }
 
         for (int testScore : testScores) {
-            lowScore = testScore;
+            if(testScore < lowScore){
+                lowScore = testScore;
+            }
         }
 
         for (int testScore : testScores){
@@ -23,7 +25,7 @@ public class Application {
             }
         }
 
-        int averageScore = sum / testScores.length;
+        double averageScore = sum / testScores.length;
 
         System.out.println("Average Score: " + averageScore);
         System.out.println("Lowest Score: " + lowScore);
